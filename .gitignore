@@ -1,0 +1,25 @@
+# Build artifacts
+bin/
+obj/
+
+# Rider and Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Visual Studio Code
+.vscode/
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
