@@ -1,50 +1,61 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+Version change: n/a → 1.0.0
+Modified principles: none (new constitution created)
+Added sections: Architecture Constraints, Development Workflow
+Removed sections: none
+Templates requiring updates:
+- .specify/templates/plan-template.md ✅ aligned
+- .specify/templates/spec-template.md ✅ aligned
+- .specify/templates/tasks-template.md ✅ aligned
+- .specify/templates/constitution-template.md ✅ aligned
+Follow-up TODOs: none
+-->
+
+# SpeckitDemo Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. API-First Design
+Every feature MUST begin with a defined API contract, endpoint, or service interface before implementation. Requirements and acceptance criteria MUST be expressed in API terms so the design is testable, reviewable, and decoupled from delivery technology.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Clean Architecture
+Application logic MUST be organized into layers where business rules are independent of framework, UI, persistence, and transport adapters. Core domain behavior MUST be protected by abstractions so changes in delivery or infrastructure do not force changes in business rules.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Dependency Injection
+All application services, external dependencies, and infrastructure components MUST be wired through dependency injection. Hidden global state and static singletons are prohibited unless documented as a necessary exception with explicit tradeoffs.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Test Coverage & Validation
+The codebase MUST maintain a minimum of 85% coverage for API and domain-critical behavior. Tests MUST include contract validation, unit tests for service abstractions, and integration tests for end-to-end API flows where the feature boundary is exercised.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Maintainable Delivery
+Every implementation MUST include clear, documented tradeoffs, architecture review, and an explicit plan for future refinement. Changes that increase complexity MUST be justified in the plan, and code reviews MUST verify adherence to the constitution before merge.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Architecture Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- The implementation MUST use the existing C#/.NET architecture and favor native dependency injection patterns such as `Microsoft.Extensions.DependencyInjection`.
+- All persistence, external integration, and platform-specific behavior MUST be behind explicit abstractions.
+- API contracts and service interfaces MUST drive design decisions, not the opposite.
+- Non-functional quality goals include maintainability, testability, and observable behavior for API flows.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Every feature MUST be documented with a spec, plan, and task breakdown that references the relevant constitution principles.
+- The development cycle MUST follow: define API contract → define tests → implement abstractions → implement concrete behavior → verify coverage and compliance.
+- Pull requests MUST include a brief compliance note naming the applicable principles and any coverage impact.
+- Exceptions to the constitution MUST be captured in a tradeoff record and reviewed before approval.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- This constitution supersedes any conflicting informal practices in the repository.
+- Amendments require an explicit proposal, peer review, and a documented migration or compliance plan.
+- Versioning policy:
+  - MAJOR when a core principle is removed or redefined in a backward-incompatible way.
+  - MINOR when a new principle or section is added, or governance guidance is materially expanded.
+  - PATCH when wording, clarity, or non-semantic refinements are made.
+- Compliance review expectations:
+  - All plans and specs MUST include a Constitution Check for API-first, DI, architecture, and coverage goals.
+  - All PRs MUST reference at least one principle and record the coverage delta.
+  - Coverage below 85% for core API or domain behavior MUST include a remediation plan in the PR description.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-04-29 | **Last Amended**: 2026-04-29

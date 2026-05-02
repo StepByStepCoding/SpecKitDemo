@@ -77,6 +77,8 @@
 
 ## Requirements *(mandatory)*
 
+*Constitution alignment: Requirements MUST be expressed in API terms, identify the service-level abstraction for dependency injection, and support the 85% coverage quality goal for core API behavior.*
+
 <!--
   ACTION REQUIRED: The content in this section represents placeholders.
   Fill them out with the right functional requirements.
