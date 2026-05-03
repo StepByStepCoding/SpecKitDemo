@@ -31,10 +31,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-- Confirm the feature is defined by an API contract or OpenAPI endpoint before implementation.
-- Confirm dependency injection and service abstractions are planned for core application behavior.
-- Confirm the plan includes measurable test coverage goals for API behavior and integration points.
-- Capture any deviations from API-first, DI, or modular architecture as explicit complexity tradeoffs.
+- All APIs must use .NET Minimal API
+- Code must follow SOLID principles
+- Test coverage must be >= 85%
+- Integration tests required for endpoints
+- Observability (logging, metrics, tracing) must be implemented
 
 ## Project Structure
 

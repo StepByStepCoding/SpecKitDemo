@@ -70,6 +70,8 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T007 Create base models/entities that all stories depend on
 - [ ] T008 Configure error handling and logging infrastructure
 - [ ] T009 Setup environment configuration management
+- [ ] T010 Setup testing framework (xUnit) and coverage tools
+- [ ] T011 Configure CI/CD for automated tests and coverage checks
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -157,6 +159,9 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] TXXX Performance optimization across all stories
 - [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
 - [ ] TXXX Security hardening
+- [ ] TXXX Ensure all code follows SOLID principles
+- [ ] TXXX Run test coverage analysis and ensure >=85%
+- [ ] TXXX Implement logging, metrics, and tracing for observability
 - [ ] TXXX Run quickstart.md validation
 
 ---
