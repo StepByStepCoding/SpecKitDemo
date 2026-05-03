@@ -31,7 +31,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- All APIs must use .NET Minimal API
+- Code must follow SOLID principles
+- Test coverage must be >= 85%
+- Integration tests required for endpoints
+- Observability (logging, metrics, tracing) must be implemented
 
 ## Project Structure
 
